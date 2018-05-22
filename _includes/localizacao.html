@@ -1,0 +1,20 @@
+<div id="localizacao">
+
+    <h1>nossa localização</h1>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEcYTtRfnSsMTH-mWKVaRjdG83Gr8H6jA&callback=initMap"></script>
+    <div id="map"></div>
+
+    <div class="information">
+        <div class="container d-xl-flex justify-content-between align-items-center">
+            {% for info in layout.informations %}
+            <div class="info info-{{info.type}} col-xs-12 d-md-flex align-items-center">
+                <span>
+                    {{info.content}}
+                </span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>

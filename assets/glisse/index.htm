@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+<meta charset="UTF-8" />
+<title>Glisse.js - Example #1 (using fullscreen api)</title>
+<!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<link rel="stylesheet" href="glisse.css" />
+<link rel="stylesheet" href="app.css" />
+</head>
+<body>
+<div id="navbar">
+<p>Change effect: </p>
+<select id="changefx">
+<option value="bounce">bounce</option>
+<option value="fadeBig">fadeBig</option>
+<option value="fade">fade</option>
+<option value="roll">roll</option>
+<option value="rotate">rotate</option>
+<option value="flipX">flipX</option>
+<option value="flipY">flipY</option>
+</select>
+</div>
+<div id="content">
+<ul class="gallery">
+<li><img src="pictures/_MG_0521_t.jpg" rel="group1" data-glisse-big="pictures/_MG_0521.jpg" class="tl" title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit" /></li>
+<li><img src="pictures/_MG_7706_t.jpg" rel="group1" data-glisse-big="pictures/_MG_7706.jpg" class="tl" title="Cum sociis natoque penatibus et magnis" /></li>
+<li><img src="pictures/_MG_7709_t.jpg" rel="group1" data-glisse-big="pictures/_MG_7709.jpg" class="tl" title="Nascetur ridiculus mus" /></li>
+<li><img src="pictures/_MG_9071_t.jpg" rel="group1" data-glisse-big="pictures/_MG_9071.jpg" class="tl" title="Dis parturient montes" /></li>
+<li><img src="pictures/_MG_9330_t.jpg" rel="group1" data-glisse-big="pictures/_MG_9330.jpg" class="tl" title="Aenean commodo ligula eget dolor" /></li>
+<li><img src="pictures/_MG_9365_t.jpg" rel="group1" data-glisse-big="pictures/_MG_9365.jpg" class="tl" title="Consectetuer adipiscing elit" /></li>
+<li><img src="pictures/_MG_9395_t.jpg" rel="group1" data-glisse-big="pictures/_MG_9395.jpg" class="tl" title="Aenean massa" /></li>
+<li><img src="pictures/_MG_9743_t.jpg" rel="group1" data-glisse-big="pictures/_MG_9743.jpg" class="tl" title="Lorem ipsum dolor sit amet" /></li>
+<li><img src="pictures/_MG_9781_t.jpg" rel="group1" data-glisse-big="pictures/_MG_9781.jpg" class="tl" title="Dis parturient montes" /></li>
+</ul>
+</div>
+<!-- JS --> 
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> 
+<script src="glisse.js"></script> 
+<script>
+            $(function () {
+                $('.tl').glisse({changeSpeed: 550, fullscreen: true}); 
+            });
+             $('#changefx').change(function() {
+                var val = $(this).val();
+                $('.tl').each(function(){
+                    $(this).data('glisse').changeEffect(val);
+                });
+            });
+        </script>
+</body>
+</html>
